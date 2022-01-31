@@ -1,6 +1,6 @@
 # pdf_splitterqt
 
-- splits a pdf in chunks of pages based on user input
+- splits a pdf by number of pages based on user input
 
 - nothing fancy
 
