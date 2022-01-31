@@ -5,24 +5,45 @@ from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
 from PyPDF2 import PdfFileWriter, PdfFileReader
 
+# pyinstaller.exe --noconsole --onefile pdf_splitter.py
 
-def split_a_pdf(pdfname):
-    inputpdf = PdfFileReader(open(pdfname, "rb"))
-    for i in range(inputpdf.numPages):
+
+def split_a_pdf(pdfname, num_pages):
+    start_page      = 0
+    inputpdf        = PdfFileReader(open(pdfname, "rb"))
+    number_of_pages = inputpdf.getNumPages()
+    while start_page < number_of_pages:
         output = PdfFileWriter()
-        output.addPage(inputpdf.getPage(i))
-        fn           = pdfname.split(".")[0] + "_page" + str(i) + ".pdf"
-        update_label = Label(root, text="page " + str(i))
+        for page in range(0, num_pages):
+            if start_page + page < number_of_pages:
+                cp = start_page + page
+                output.addPage(inputpdf.getPage(cp))
+        fn = pdfname.split(".")[0] + "_page" + str(start_page) + ".pdf"
+        start_page += num_pages
+        update_label = Label(root, text="page " + str(start_page))
         update_label.pack()
         with open(fn, "wb") as outputStream:
             output.write(outputStream)
 
 
-# os.system("clear")
-
 root = Tk()
 root.title("PDF Splitter")
 root.geometry("400x600")
+
+
+OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # etc
+
+
+variable = StringVar(root)
+variable.set(OPTIONS[0])  # default value
+
+w = OptionMenu(root, variable, *OPTIONS)
+w.place(x=68, y=70)
+# w.pack()
+
+
+label_2 = Label(root, text="How many pages split PDF?", width=30, font=("bold", 10))
+label_2.place(x=68, y=50)
 
 
 myLabel = Label(root, text="Pick some PDFs to split:")
@@ -38,7 +59,7 @@ def select_files():
     filenames = fd.askopenfilenames(title="Open files", initialdir="/", filetypes=filetypes)
     for fn in filenames:
         update(fn)
-        split_a_pdf(fn)
+        split_a_pdf(fn, int(variable.get()))
 
 
 # open button
