@@ -3,9 +3,10 @@ from PyQt5 import uic
 import sys
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from splitter import Ui_MainWindow
+import qdarkstyle
 
 # pyuic5 -x splitter.ui -o splitter.py
-# pyinstaller.exe --noconsole --onefile pdf_splitter.py
+# pyinstaller.exe --noconsole --onefile pdf_splitterQT.py
 
 
 class UI(QMainWindow):
@@ -45,11 +46,18 @@ class UI(QMainWindow):
         fname = QFileDialog.getOpenFileName(self, "Open PDF File", "", "PDF files (*.pdf)")
         self.label_2.setText("splitting ...")
         if fname:
-            self.label_2.setText(fname[0])
-            self.split_a_pdf()
+            if len(fname[0]) > 0:
+                self.label_2.setText(fname[0])
+                self.split_a_pdf()
+                self.label_2.setText("done splitting: " + fname[0])
+            else:
+                self.label_2.setText("no file selected")
+        else:
+            self.label_2.setText("not splitting anything.")
 
 
-app      = QApplication(sys.argv)
+app = QApplication(sys.argv)
+app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 UIWindow = UI()
 app.exec_()
 

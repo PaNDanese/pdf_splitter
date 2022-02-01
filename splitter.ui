@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -26,6 +29,9 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Number of pages per split PDF&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -33,7 +39,7 @@
         <bool>true</bool>
        </property>
        <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -42,10 +48,19 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
       </widget>
      </item>
@@ -79,8 +94,8 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -160,8 +175,8 @@
           <colorrole role="Window">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -216,8 +231,8 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -297,8 +312,8 @@
           <colorrole role="Window">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -353,8 +368,8 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -425,8 +440,8 @@
           <colorrole role="Base">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -434,8 +449,8 @@
           <colorrole role="Window">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>85</red>
-             <green>0</green>
+             <red>255</red>
+             <green>255</green>
              <blue>255</blue>
             </color>
            </brush>
@@ -486,6 +501,9 @@
          <bold>true</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>Select PDF file to split</string>
        </property>
@@ -497,6 +515,9 @@
         <font>
          <pointsize>12</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
        <property name="text">
         <string/>
@@ -515,7 +536,7 @@
      <x>0</x>
      <y>0</y>
      <width>1309</width>
-     <height>38</height>
+     <height>31</height>
     </rect>
    </property>
   </widget>
