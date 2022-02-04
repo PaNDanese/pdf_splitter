@@ -67,6 +67,7 @@ class UI(QMainWindow):
         fname = QFileDialog.getOpenFileName(self, "Select PDF File", "", "PDF files (*.pdf)")
         fname = list(fname)
         names = "No file selected"
+        self.progress_bar.setValue(0)
         if fname and len(fname[0]) > 0:
             names           = fname[0]
             self.file_names = names
