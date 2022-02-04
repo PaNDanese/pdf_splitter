@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1309</width>
-    <height>823</height>
+    <width>1431</width>
+    <height>987</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,67 +17,58 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>20</y>
-      <width>721</width>
-      <height>371</height>
+      <x>190</x>
+      <y>60</y>
+      <width>871</width>
+      <height>461</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="5" column="0" colspan="2">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="styleSheet">
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Number of pages per split PDF&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Number of pages per split&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
        <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="comboBox">
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>16777215</height>
-        </size>
-       </property>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label_2">
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
+         <pointsize>9</pointsize>
         </font>
        </property>
-       <property name="styleSheet">
-        <string notr="true"/>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
+     <item row="1" column="0">
       <widget class="QPushButton" name="pushButton">
        <property name="palette">
         <palette>
@@ -509,8 +500,65 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="label_2">
+     <item row="1" column="1">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Split the PDF</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="2">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -519,11 +567,12 @@
        <property name="styleSheet">
         <string notr="true"/>
        </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="wordWrap">
-        <bool>true</bool>
+      </widget>
+     </item>
+     <item row="7" column="0" colspan="2">
+      <widget class="QProgressBar" name="progressBar">
+       <property name="value">
+        <number>0</number>
        </property>
       </widget>
      </item>
@@ -535,8 +584,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1309</width>
-     <height>31</height>
+     <width>1431</width>
+     <height>38</height>
     </rect>
    </property>
   </widget>

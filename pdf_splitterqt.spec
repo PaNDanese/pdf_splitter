@@ -4,7 +4,7 @@
 block_cipher = None
 
 
-a = Analysis(['pdf_splitterQT.py'],
+a = Analysis(['pdf_splitterqt.py'],
              pathex=[],
              binaries=[],
              datas=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,  
           [],
-          name='pdf_splitterQT',
+          name='pdf_splitterqt',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
